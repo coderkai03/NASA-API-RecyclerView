@@ -37,16 +37,24 @@ class MainActivity : AppCompatActivity() {
         val client = AsyncHttpClient()
 
         //need to include timestamp later?
-        val url ="$baseurl?sol=randnum&api_key=$apikey"
+        val url ="$baseurl?sol=$randnum&api_key=$apikey"
 
-//        client[url, object : JsonHttpResponseHandler() {
-//            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON?) {
-//                Log.d("NASA", "response successful $json")
-//
-//            }
-//        } {
-//
-//        }]
+        client[url, object : JsonHttpResponseHandler() {
+            override fun onSuccess(statusCode: Int, headers: Headers?, json: JsonHttpResponseHandler.JSON) {
+                Log.d("NASA", "response successful $json")
+//                t1.text =
+            }
+
+            override fun onFailure(
+                statusCode: Int,
+                headers: Headers?,
+                response: String?,
+                throwable: Throwable?
+            ) {
+                TODO("Not yet implemented")
+            }
+
+        }]
     }
 
     private fun generateHash(timestamp: Long): String {
