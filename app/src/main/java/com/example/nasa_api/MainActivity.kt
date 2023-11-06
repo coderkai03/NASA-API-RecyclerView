@@ -21,12 +21,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val pic = findViewById<ImageView>(R.id.nasapic)
-        val text1 = findViewById<TextView>(R.id.text1)
-        val text2 = findViewById<TextView>(R.id.text2)
-        val next = findViewById<Button>(R.id.next)
+//        val pic = findViewById<ImageView>(R.id.nasapic)
+//        val text1 = findViewById<TextView>(R.id.text1)
+//        val text2 = findViewById<TextView>(R.id.text2)
+//        val next = findViewById<Button>(R.id.next)
 
-        getNextData(pic, text1, text2, next)
+//        getNextData(pic, text1, text2, next)
     }
 
     private fun getNextData(pic: ImageView, t1: TextView, t2: TextView, next: Button) {
