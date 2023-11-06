@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -22,9 +23,13 @@ class NASA_data(url: String, name: String, explanation: String) {
 class NASA_Adapter (private val nasaList: MutableList<NASA_data>) : RecyclerView.Adapter<NASA_Adapter.ViewHolder>() {
     class ViewHolder(view: View) :  RecyclerView.ViewHolder(view){
         val nasaImg: ImageView
+        val t1: TextView
+        val t2: TextView
 
         init {
             nasaImg = view.findViewById(R.id.nasapic)
+            t1 = view.findViewById(R.id.text1)
+            t2 = view.findViewById(R.id.text2)
         }
     }
 
@@ -38,6 +43,8 @@ class NASA_Adapter (private val nasaList: MutableList<NASA_data>) : RecyclerView
     override fun getItemCount() = nasaList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.t1.text = nasaList[position].name
+        holder.t2.text = nasaList[position].explanation
 
         Glide.with(holder.itemView)
             .load(nasaList[position].url)
